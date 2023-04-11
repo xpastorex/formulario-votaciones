@@ -28,4 +28,30 @@ VALUES ('$rut','$nombre','$alias','$email','$nosotrosArray','$comuna','$region',
 
 mysqli_query($enlace, $sql);
 
+
+// $stmt = mysqli_stmt_init($enlace);
+
+// if (mysqli_stmt_prepare($stmt, $sql)) {
+//     die(mysqli_error($enlace));
+// }
+// ;
+
+// mysqli_stmt_bind_param(
+//     $stmt,
+//     "sssssiii",
+//     $rut,
+//     $nombre,
+//     $alias,
+//     $email,
+//     $nosotrosArray,
+//     $comuna,
+//     $region,
+//     $candidato
+// );
+
+// mysqli_stmt_execute($stmt);
+
+// echo "record Saved"
+
+
 ?>

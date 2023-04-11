@@ -44,6 +44,17 @@ section form {
   width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+#content input {
+  margin-top: 2px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 3px;
+}
+
+>>>>>>> parent of 893c67c (test)
 #content input:focus {
   outline: none;
   transform: scale(1.01);
@@ -54,6 +65,10 @@ section form {
   margin-top: 2px;
   width: 50%;
   border: none;
+<<<<<<< HEAD
+=======
+  font-family: "Lato", sans-serif;
+>>>>>>> parent of 893c67c (test)
   border: 1px solid #777;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
