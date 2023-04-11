@@ -11,22 +11,22 @@
 
 <body>
     <section>
-        <form onsubmit="return handleData()" method="post">
+        <form action="resultado.php" onsubmit="return handleData()" method="post">
             <div id="content">
                 <span>Nombre y Apellido</span>
-                <input type="text" required>
+                <input type="text" required name="nombre">
             </div>
             <div id="content">
                 <span>Alias</span>
-                <input type="text" required>
+                <input type="text" required name="alias">
             </div>
             <div id="content">
                 <span>RUT</span>
-                <input type="text" required>
+                <input type="text" required name="rut">
             </div>
             <div id="content">
                 <span>Email</span>
-                <input type="email" required>
+                <input type="email" required name="email">
             </div>
             <div id="content">
                 <span>Region</span>
@@ -38,7 +38,7 @@
             <div id="content">
                 <span>Comuna</span>
                 <div id="comunas">
-                    <select name="select" id="select" required>
+                    <select name="comuna" id="select" required>
                         <option selected hidden value="">--Comuna--</option>
                         <!-- Añadir codigo php para añadir las comunas -->
 
@@ -57,19 +57,19 @@
                 <span>Como se enteró de Nosotros</span>
                 <div class="nosotros">
                     <div>
-                        <input name="langs[]" type="checkbox" name="web">
+                        <input name="langs[]" type="checkbox" value="Web">
                         <span>Web</span>
                     </div>
                     <div>
-                        <input name="langs[]" type="checkbox" name="tv">
+                        <input name="langs[]" type="checkbox" value="TV">
                         <span>TV</span>
                     </div>
                     <div>
-                        <input name="langs[]" type="checkbox" name="redes">
+                        <input name="langs[]" type="checkbox" value="Redes Sociales">
                         <span>Redes Sociales</span>
                     </div>
                     <div>
-                        <input name="langs[]" type="checkbox" name="amigo">
+                        <input name="langs[]" type="checkbox" value="Amigo">
                         <span>Amigo</span>
                     </div>
                 </div>
