@@ -18,11 +18,12 @@
             </div>
             <div id="content">
                 <span>Alias</span>
-                <input type="text" required name="alias">
+                <input maxlength="12" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{5,12}$" type="text" required name="alias"
+                    title="Debe contener letras y numeros, y al menos un largo de 5 letras (no se permiten caracteres especiales)">
             </div>
             <div id="content">
                 <span>RUT</span>
-                <input type="text" required name="rut">
+                <input placeholder="Rut (Ej : 11111111-0)" type="text" required name="rut" pattern="\d{3,8}-[\d|kK]{1}" title="Debe ser un Rut válido">
             </div>
             <div id="content">
                 <span>Email</span>
@@ -116,7 +117,7 @@
                 }
             }
 
-            conexion.open("GET" , "comunas.php?c=" + str , true);
+            conexion.open("GET", "comunas.php?c=" + str, true);
             conexion.send();
 
         }
