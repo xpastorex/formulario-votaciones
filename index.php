@@ -32,13 +32,13 @@
                 <span>Region</span>
                 <select name="region" required onclick="mostrarSelect(this.value)">
                     <option selected hidden value="">--Region--</option>
-                    <!-- Añadir codigo php para añadir las regiones -->
+                    <?php include "region.php" ?>
                 </select>
             </div>
             <div id="content">
                 <span>Comuna</span>
                 <div id="comunas">
-                    <select name="comuna" required>
+                    <select name="select" id="select" required>
                         <option selected hidden value="">--Comuna--</option>
                         <!-- Añadir codigo php para añadir las comunas -->
 
@@ -49,7 +49,7 @@
                 <span>Candidato</span>
                 <select name="candidato" required>
                     <option selected hidden value="">--Candidato--</option>
-                    <!-- Añadir codigo php para añadir los candidatos -->
+                    <?php include "candidatos.php" ?>
 
                 </select>
             </div>
