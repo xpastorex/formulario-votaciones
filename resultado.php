@@ -1,5 +1,6 @@
 <?php
 
+//Se guardan los datos del form llamandolos con el nombre que tienen asignados
 $nombre = $_POST["nombre"];
 $alias = $_POST["alias"];
 $rut = $_POST["rut"];
@@ -8,7 +9,8 @@ $region = $_POST["region"];
 $comuna = $_POST["comuna"];
 $candidato = $_POST["candidato"];
 $nosotros = $_POST['langs'];
-$nosotrosArray = implode(", ", $nosotros);
+//Se orgenan los datos de nosotros y se guardan concatenados en una string
+$nosotrosString = implode(", ", $nosotros);
 
 
 $servidor = "localhost";
@@ -31,7 +33,7 @@ if (mysqli_num_rows($rr) > 0) {
     $message = '<p style="color : red"> Usted ya votó </p>';
 } else {
     $sql = "INSERT INTO `usuarios`(`rut`, `nombre`, `alias`, `email`, `nosotros`, `comuna_id`, `region_id`, `candidato_id`) 
-    VALUES ('$rut','$nombre','$alias','$email','$nosotrosArray','$comuna','$region', '$candidato')";
+    VALUES ('$rut','$nombre','$alias','$email','$nosotrosString','$comuna','$region', '$candidato')";
     mysqli_query($enlace, $sql);
     $message = '<p style="color : green"> Voto Registrado </p>';
 }

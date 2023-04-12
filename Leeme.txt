@@ -1,0 +1,19 @@
+IMPORTANTE, USAR LAS SIGUIENTES VERSIONES PARA PARA EVITAR ERRORES DE COMPATIBILIDAD:
+
+# PHP 8.2.4 (VS16 X86 64bit thread safe) + PEAR
+# MariaDB 10.4.28
+
+Instrucciones para poder instalar el proyecto:
+
+1. Nos dirigimos a la carpeta donde está instalado XAMPP, luego nos dirigimos a la carpeta htdocs.
+2. Dentro de la carpeta htdocs creamos una carpeta llamada votaciones.
+3. Dentro de la carpeta votaciones, clonamos el proyecto.
+4. Posteriormente, abrimos XAMPP Control Panel y ejecutamos Apache y MySQL.
+5. Le damos click al boton Admin de MySQL para ingresar a phpMyAdmin.
+6. Creamos una base de datos llamada votaciones.
+7. Hacemos click a la base de datos creada , nos dirigimos a Importar
+8. Seleccionamos el Script votaciones.sql y aceptamos.
+9. Luego de esto, escribimos en el navegador: localhost/votaciones
+
+
+De esta manera es como se inicia el proyecto.

@@ -11,6 +11,7 @@
 
 <body>
     <section>
+        <!-- Formulario -->
         <form action="resultado.php" onsubmit="return handleData()" method="post">
             <h1>FORMULARIO DE VOTACIÓN</h1>
             <div id="content">
@@ -34,6 +35,7 @@
                 <span>Region</span>
                 <select name="region" required onclick="mostrarSelect(this.value)">
                     <option selected hidden value="">--Region--</option>
+                    <!-- Se llena el select de regiones mediante el archivop region.php -->
                     <?php include "region.php" ?>
                 </select>
             </div>
@@ -42,7 +44,7 @@
                 <div id="comunas">
                     <select name="comuna" id="select" required>
                         <option selected hidden value="">--Comuna--</option>
-                        <!-- Añadir codigo php para añadir las comunas -->
+                        <!-- Las opciones del select columnas se añaden mediante la function mostrarSelect(), la cual hace una consulta en la base de datos para poder llamar a estos de manera dinamica-->
 
                     </select>
                 </div>
@@ -51,6 +53,7 @@
                 <span>Candidato</span>
                 <select name="candidato" required>
                     <option selected hidden value="">--Candidato--</option>
+                    <!-- Se llena el select de candidatos mediante el archivo candidatos.php el cual hace una consulta a la base de datos -->
                     <?php include "candidatos.php" ?>
 
                 </select>
@@ -84,10 +87,9 @@
     </section>
 
     <script>
+        //Funcion la cual se encarga de asegurar que hayan al menos 2 checkbox de "Como se enteró de nosotros" seleccionados para poder enviar el formulario
         function handleData() {
             var form_data = new FormData(document.querySelector("form"));
-
-            //Metodo para validar si hay mas de 2 checkbox seleccionados
             if (form_data.getAll("langs[]").length < 2) {
                 document.getElementById("chk_option_error").style.display = "flex";
                 return false;
@@ -99,7 +101,9 @@
 
         }
     </script>
+
     <script type="text/javascript">
+        //Funcion que se encarga de llenar el select de comunas en base a la region que se selecciona
         function mostrarSelect(str) {
             var conexion;
 
