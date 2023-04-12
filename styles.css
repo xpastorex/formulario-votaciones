@@ -44,17 +44,15 @@ section form {
   width: 100%;
 }
 
-<<<<<<< HEAD
-=======
 #content input {
   margin-top: 2px;
   width: 100%;
   border-radius: 10px;
   border: none;
   padding: 5px 3px;
+  font-size: 1.25rem;
 }
 
->>>>>>> parent of 893c67c (test)
 #content input:focus {
   outline: none;
   transform: scale(1.01);
@@ -65,10 +63,7 @@ section form {
   margin-top: 2px;
   width: 50%;
   border: none;
-<<<<<<< HEAD
-=======
   font-family: "Lato", sans-serif;
->>>>>>> parent of 893c67c (test)
   border: 1px solid #777;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
@@ -95,4 +90,72 @@ section form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.enviar{
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  padding: 2px 0px;
+  font-weight: 600;
+  background-color: #0277bd;
+  color: white;
+  transition: all ease-in-out .2s;
+}
+
+.enviar:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all ease-in-out .2s;
+}
+
+.resultado {
+  background-color: white;
+  width: 30%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 30px;
+}
+
+.resultado h1 {
+  font-size: 50px;
+}
+
+.resultado p {
+  font-size: 40px;
+}
+
+.resultado button {
+  background: #00F27F;
+  border-radius: 12px;
+  text-decoration: none;
+  width: 260px;
+  padding: 10px 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all ease-in-out .2s;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.resultado button:hover{
+  transform: scale(1.1);
+  transition: all ease-in-out .2s;
+}
+
+.resultado a{
+  text-decoration: none;
+  color: black;
+
 }

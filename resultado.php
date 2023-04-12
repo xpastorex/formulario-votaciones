@@ -22,36 +22,41 @@ if (!$enlace) {
     echo "Error en la conexion con el servidor";
 }
 
-
-$sql = "INSERT INTO `usuarios`(`rut`, `nombre`, `alias`, `email`, `nosotros`, `comuna_id`, `region_id`, `candidato_id`) 
-VALUES ('$rut','$nombre','$alias','$email','$nosotrosArray','$comuna','$region', '$candidato')";
-
-mysqli_query($enlace, $sql);
+$r = "SELECT rut from usuarios WHERE rut = '$rut'";
+$rr = mysqli_query($enlace, $r);
+$message = '';
 
 
-// $stmt = mysqli_stmt_init($enlace);
-
-// if (mysqli_stmt_prepare($stmt, $sql)) {
-//     die(mysqli_error($enlace));
-// }
-// ;
-
-// mysqli_stmt_bind_param(
-//     $stmt,
-//     "sssssiii",
-//     $rut,
-//     $nombre,
-//     $alias,
-//     $email,
-//     $nosotrosArray,
-//     $comuna,
-//     $region,
-//     $candidato
-// );
-
-// mysqli_stmt_execute($stmt);
-
-// echo "record Saved"
-
-
+if (mysqli_num_rows($rr) > 0) {
+    $message = '<p style="color : red"> Usted ya votó </p>';
+} else {
+    $sql = "INSERT INTO `usuarios`(`rut`, `nombre`, `alias`, `email`, `nosotros`, `comuna_id`, `region_id`, `candidato_id`) 
+    VALUES ('$rut','$nombre','$alias','$email','$nosotrosArray','$comuna','$region', '$candidato')";
+    mysqli_query($enlace, $sql);
+    $message = '<p style="color : green"> Voto Registrado </p>';
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resultado Votacion</title>
+</head>
+
+<body>
+    <section>
+        <div class=resultado>
+            <h1>Resultado Votacion</h1>
+            <?php if (isset($message))
+                echo $message ?>
+                <button><a href="index.php">volver al inicio</a></button>
+            </div>
+        </section>
+    </body>
+
+    </html>

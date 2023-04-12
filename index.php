@@ -12,17 +12,19 @@
 <body>
     <section>
         <form action="resultado.php" onsubmit="return handleData()" method="post">
+            <h1>FORMULARIO DE VOTACIÓN</h1>
             <div id="content">
                 <span>Nombre y Apellido</span>
                 <input type="text" required name="nombre">
             </div>
             <div id="content">
                 <span>Alias</span>
-                <input type="text" required name="alias">
+                <input type="text" maxlength="12" required name="alias" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{5,12}$"
+                    title="El alias debe contener al menos un numero y un digito, y tener al menos 5 caracteres (no están permitidos los caracteres especiales)">
             </div>
             <div id="content">
                 <span>RUT</span>
-                <input type="text" required name="rut">
+                <input type="text" required name="rut" pattern="\d{3,8}-[\d|kK]{1}" title="Debe ser un Rut válido">
             </div>
             <div id="content">
                 <span>Email</span>
@@ -77,7 +79,7 @@
             <div style="display:none; color:red; " id="chk_option_error">
                 Por favor, seleccione al menos dos opciones
             </div>
-            <input type="submit" name="submit" value="Enviar" />
+            <input class="enviar" type="submit" name="submit" value="Enviar" />
         </form>
     </section>
 
@@ -115,10 +117,8 @@
                     document.getElementById("comunas").innerHTML = conexion.responseText;
                 }
             }
-
-            conexion.open("GET" , "comunas.php?c=" + str , true);
+            conexion.open("GET", "comunas.php?c=" + str, true);
             conexion.send();
-
         }
     </script>
 </body>
